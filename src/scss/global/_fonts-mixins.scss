@@ -1,0 +1,84 @@
+@use 'sass:list';
+@use 'sass:string';
+@use 'sass:map';
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: '') {
+	$index: string.index($string, $search);
+
+	@if $index {
+
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff) {
+	$src: null;
+
+	$extmods: (
+		eot: '?',
+		svg: '#' + str-replace($name, ' ', '_')
+	);
+
+	$formats: (
+		otf: 'opentype',
+		ttf: 'truetype'
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+		$format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+		$src: list.append($src, url(quote($path + "." + $extmod)) format(string.quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: string.quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		font-display: swap;
+		src: $src;
+	}
+}
+
+@function valid-weight($available-weights, $weight) {
+
+	@if index($available-weights, $weight) {
+
+		@return $weight;
+	} @else {
+
+		@error 'Sorry, but #{$weight} is not an available weight. The available weights are: #{$available-weights}.';
+	}
+}
+
+@mixin sans($weight: 400, $style: normal, $print: true) {
+	$available-weights: 400, 500; /* stylelint-disable-line */
+
+	@if $print == true {
+		font-family: sans-serif;
+	}
+
+	font-style: $style;
+	// prettier-ignore
+	font-weight: valid-weight($available-weights, $weight); /* stylelint-disable-line */
+}
+
+@mixin serif($weight: 400, $style: normal, $print: true) {
+	$available-weights: 300, 400, 600, 700; /* stylelint-disable-line */
+
+	@if $print == true {
+		font-family: serif;
+	}
+
+	font-style: $style;
+	// prettier-ignore
+	font-weight: valid-weight($available-weights, $weight); /* stylelint-disable-line */
+}

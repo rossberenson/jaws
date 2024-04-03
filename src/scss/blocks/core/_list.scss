@@ -1,0 +1,26 @@
+// List - Core Gutenberg Block
+
+.wp-block-list {
+	display: block;
+}
+
+.wp-block-list ul:not( .menu, .sub-menu ) {
+	margin-bottom: 16px;
+	list-style: disc inside;
+}
+
+.wp-block-list ol {
+
+	margin-bottom: 16px;
+	list-style: decimal inside;
+}
+
+.wp-block-list li li,
+.wp-block-list li li li,
+.wp-block-list li li li li,
+.wp-block-list li li li li li,
+.wp-block-list li li li li li li {
+
+	margin-left: 16px;
+}
+

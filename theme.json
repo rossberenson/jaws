@@ -1,0 +1,110 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"appearanceTools": "",
+		"color": {
+			"custom": "",
+			"customGradient": "1",
+			"link": "",
+			"palette": [
+				{
+					"name": "Purple",
+					"slug": "purple",
+					"color": "#252b5a"
+				}
+			],
+			"duotone": [
+				{
+					"colors": [ "#000000", "#000000" ]
+				}
+			],
+			"gradients": [
+				{
+					"name": "To Purple",
+					"slug": "to-purple",
+					"gradient": "linear-gradient(180deg, rgba(37,43,90,0) 0%, rgba(37,43,90,1) 100%);"
+				},
+				{
+					"name": "From Purple",
+					"slug": "from-purple",
+					"gradient": "linear-gradient(180deg, rgba(37,43,90,1) 0%, rgba(37,43,90,0) 100%);"
+				}
+			]
+		},
+		"spacing": {
+			"padding": "",
+			"margin": "",
+			"units": [ "%", "px", "em", "rem", "vh", "vw" ],
+			"blockGap": true,
+			"spacingSizes": [
+				{
+					"size": "1.25rem",
+					"slug": "20",
+					"name": "20px"
+				},
+				{
+					"size": "clamp(1.25rem, 0.366rem + 2.358vw, 1.875rem)",
+					"slug": "30",
+					"name": "30px"
+				},
+				{
+					"size": "clamp(1.25rem, -0.519rem + 4.717vw, 2.5rem)",
+					"slug": "40",
+					"name": "40px"
+				},
+				{
+					"size": "clamp(1.25rem, -1.403rem + 7.075vw, 3.125rem)",
+					"slug": "50",
+					"name": "50px"
+				},
+				{
+					"size": "clamp(1.25rem, -5.825rem + 18.868vw, 6.25rem)",
+					"slug": "100",
+					"name": "100px"
+				}
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "20px",
+					"name": "Small",
+					"fluid": {
+						"min": "20px",
+						"max": "20px"
+					}
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1142px"
+		},
+		"blocks": {
+			"core/group": {
+				"color": {
+					"custom": true
+				}
+			},
+			"core/button": {
+				"color": {},
+				"typography": {
+					"fontSizes": [
+						{
+							"slug": "Small",
+							"size": "1.5rem",
+							"name": "small"
+						},
+						{
+							"slug": "Medium",
+							"size": "2rem",
+							"name": "medium"
+						}
+					]
+				}
+			}
+		}
+	}
+}

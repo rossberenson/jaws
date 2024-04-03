@@ -1,0 +1,9 @@
+:root {
+	--section-padding-top: 50px;
+	--section-padding-bottom: 50px;
+
+	@include respond-above(large) {
+		--section-padding-top: 100px;
+		--section-padding-bottom: 100px;
+	}
+}

@@ -1,0 +1,38 @@
+@mixin fade-out($speed: 300ms) {
+	opacity: 0;
+	transition: visibility 0s linear #{$speed}, opacity #{$speed};
+	visibility: hidden;
+}
+
+@mixin fade-in($speed: 300ms, $opacity: 1) {
+	opacity: $opacity;
+	transition: visibility 0s linear 0s, opacity #{$speed};
+	visibility: visible;
+}
+
+@mixin placeholder() {
+
+	&::-webkit-input-placeholder {
+
+		/* Chrome/Opera/Safari */
+		@content;
+	}
+
+	&::-moz-placeholder {
+
+		/* Firefox 19+ */
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+
+		/* IE 10+ */
+		@content;
+	}
+
+	&:-moz-placeholder {
+
+		/* Firefox 18- */
+		@content;
+	}
+}

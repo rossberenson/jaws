@@ -1,0 +1,14 @@
+// Theme Styles.
+
+@import 'global/index';
+@import 'base/index';
+@import 'blocks/index';
+@import 'blocks/core/index';
+
+/* component scss from components directory */
+@import '../../components/**/[!_]*.scss'; /* stylelint-disable-line */
+@import 'components/index';
+@import 'template-tags/index';
+@import 'templates/index';
+@import 'wordpress-global/index';
+

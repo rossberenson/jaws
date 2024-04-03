@@ -1,0 +1,22 @@
+{
+	"editor.formatOnSave": true,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"intelephense.environment.includePaths": [
+		"../../"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": "explicit"
+	},
+	"stylelint.validate": [
+		"css",
+		"less",
+		"postcss",
+		"scss"
+	],
+	"phpsab.fixerEnable": true,
+	"phpsab.debug": true,
+	"phpsab.executablePathCBF": "./vendor/bin/phpcbf",
+	"phpsab.executablePathCS": "./vendor/bin/phpcs",
+}

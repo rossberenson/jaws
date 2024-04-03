@@ -1,0 +1,71 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JAWS WordPress Theme Starter",
+  "main": "index.js",
+  "author": "Ross Berenson",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossberenson/JAWS.git"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production wp-scripts build --webpack-copy-php",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint": "run-p lint:*",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "lint:php": "composer run-script lint",
+    "build:pot": "composer run-script pot",
+    "packages-update": "wp-scripts packages-update",
+    "setup": "composer install --quiet && npm install && npm run build",
+    "config": "node setup/setup.mjs",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start --webpack-copy-php",
+    "dev": "npm run watch",
+    "watch": "run-p start sync",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js",
+    "sync": "browser-sync start --https --proxy site-url.local --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'"
+  },
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^17.10.0",
+    "@wordpress/prettier-config": "^3.10.0",
+    "@wordpress/scripts": "^27.4.0",
+    "@wordpress/stylelint-config": "^21.36.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-prettier": "^5.0.0-alpha.1",
+    "prettier": "^3.0.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-order": "^6.0.3"
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.7",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-webpack-plugin": "^4.0.1",
+    "gsap": "file:gsap-bonus.tgz",
+    "inquirer": "^9.2.9",
+    "mini-css-extract-plugin": "^2.7.6",
+    "node-sass-glob-importer-plus": "^5.3.2",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.5",
+    "svg-spritemap-webpack-plugin": "^4.5.0",
+    "svg-transform-loader": "^2.0.13",
+    "webpack-merge": "^5.9.0"
+  }
+}

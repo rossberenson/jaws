@@ -1,0 +1,60 @@
+{
+	"extends": [
+		"@wordpress/stylelint-config/scss",
+		"stylelint-config-prettier"
+	],
+	"plugins": [ "stylelint-order" ],
+	"rules": {
+		"order/properties-alphabetical-order": true,
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"except": [ "after-same-name" ],
+				"ignoreAtRules": [ "if", "else" ]
+			}
+		],
+		"declaration-colon-newline-after": null,
+		"declaration-no-important": true,
+		"function-parentheses-space-inside": null,
+		"no-descending-specificity": null,
+		"rule-empty-line-before": "always-multi-line",
+		"selector-pseudo-class-parentheses-space-inside": null,
+		"scss/at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": [
+					"apply",
+					"layer",
+					"variants",
+					"responsive",
+					"screen",
+					"apply",
+					"layer",
+					"variants",
+					"responsive",
+					"screen",
+					"function",
+					"if",
+					"each",
+					"include",
+					"mixin",
+					"else",
+					"else if",
+					"error",
+					"return",
+					"extend",
+					"content",
+					"for"
+				]
+			}
+		],
+		"string-quotes": "single",
+		"selector-class-pattern": null,
+		"no-invalid-position-at-import-rule": null,
+		"no-irregular-whitespace": null,
+		"no-eol-whitespace": null,
+		"block-closing-brace-space-after": "always-single-line",
+		"scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+		"custom-property-no-missing-var-function": null
+	}
+}

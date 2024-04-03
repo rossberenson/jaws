@@ -1,0 +1,23 @@
+// Global Resets/Overrides
+
+*,
+::after,
+::before {
+
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	word-wrap: break-word;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@include sans(400, normal, true);
+}
+
+pre {
+	overflow: auto
+}
