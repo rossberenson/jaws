@@ -20,7 +20,7 @@ function setup_block_defaults( $defaults, $args = [], $block = null ) {
 	endif;
 
 	// Set up element attributes. href added 1/19/23 Ross Berenson.
-	$atts = jaws_get_formatted_atts( $defaults );
+	$atts = jaws_get_attributes( $defaults );
 
 	return [ $defaults, $atts ];
 }

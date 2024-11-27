@@ -12,6 +12,6 @@
  *
  * @return  mixed         Value
  */
-function maybe_get( $array = array(), $key = 0, $default = null ) {
+function jaws_maybe_get( $array = array(), $key = 0, $default = null ) {
 	return isset( $array[ $key ] ) ? $array[ $key ] : $default;
 }

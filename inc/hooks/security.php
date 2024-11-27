@@ -20,10 +20,8 @@ add_filter( 'xmlrpc_enabled', '__return_false' );
 /**
  * Change REST-API header from "null" to "*".
  *
- * NOTE: need to discuss security implications here
- *
  * @see https://w3c.github.io/webappsec-cors-for-developers/#avoid-returning-access-control-allow-origin-null
  */
-add_action( 'rest_api_init', function() {
-	header( 'Access-Control-Allow-Origin: *' );
-} );
+// add_action( 'rest_api_init', function() {
+// 	header( 'Access-Control-Allow-Origin: *' );
+// } );

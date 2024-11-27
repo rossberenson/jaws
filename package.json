@@ -1,5 +1,5 @@
 {
-  "name": "project-name",
+  "name": "jaws-theme",
   "version": "1.0.0",
   "private": true,
   "description": "JAWS WordPress Theme Starter",
@@ -35,7 +35,7 @@
     "watch": "run-p start sync",
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js",
-    "sync": "browser-sync start --https --proxy site-url.local --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'"
+    "sync": "browser-sync start --https --proxy https://site-url.local --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'"
   },
   "devDependencies": {
     "@wordpress/eslint-plugin": "^17.10.0",

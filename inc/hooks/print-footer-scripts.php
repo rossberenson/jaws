@@ -19,7 +19,8 @@ add_action(
 		}
 
 		// Otherwise, echo the scripts!
-		$scripts['footer_scripts'] ?? false;
+		// phpcs:ignore
+		echo $scripts['footer_scripts'] ?? false;
 	},
 	999
 );

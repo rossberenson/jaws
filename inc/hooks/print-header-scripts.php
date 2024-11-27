@@ -14,7 +14,8 @@ add_action(
 		}
 
 		// Otherwise, echo the scripts!
-		$scripts['header_scripts'] ?? false;
+		// phpcs:ignore
+		echo $scripts['header_scripts'] ?? false;
 	},
 	999
 );

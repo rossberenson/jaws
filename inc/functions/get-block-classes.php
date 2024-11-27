@@ -2,7 +2,7 @@
 /**
  * Returns an updated array of classes.
  *
- * NOTE: I thought gutenberg did this already?
+ * This is used for the ACF Block Boilerplate
  *
  * @param array $block Array of block attributes.
  *

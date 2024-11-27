@@ -36,5 +36,5 @@ function jaws_print_sprite_svg( $args = [] ) {
 
 	$allowed_tags = array_merge( $kses_defaults, $svg_args );
 
-	echo wp_kses( jaws_get_svg( $args ), $allowed_tags );
+	echo wp_kses( jaws_get_sprite_svg( $args ), $allowed_tags );
 }

@@ -2,12 +2,11 @@
 /**
  * Returns an array of ACF fields.
  *
- * NOTE: we should make this fallback to grabbing `wp_post_meta` if the ACF plugin ever fails
- * NOTE: should this always return an array?
+ * TO DOS: If only one field, return the value directly instead of an array?
  *
  * @author Adam Bates <adam.bates@webdevstudios.com>
  *
- * @param array $fields Array of field names ie: [ 'layout', 'eyebrow_heading', 'content', 'heading' ].
+ * @param array $fields Array of field names ie: [ 'section_title', 'section_teaser', 'bait', 'fish' ].
  * @param int   $id (optional) ID of the post or of the block ($block[id]).
  *
  * @return array|false
