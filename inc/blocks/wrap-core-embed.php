@@ -6,6 +6,10 @@
  * @param string $block         The block's name.
  */
 add_filter( 'render_block', function($block_content, $block) {
+	if ( ! has_blocks() ) {
+		return $block_content;
+	}
+
 	$blocks_to_wrap = [
 		'core/embed',
 	];

@@ -5,7 +5,11 @@
  * @param string $block_content The content of the block (what will render).
  * @param string $block         The block's name.
  */
-add_filter( 'render_block', function() {
+add_filter( 'render_block', function( $block_content, $block ) {
+	if ( ! has_blocks() ) {
+		return $block_content;
+	}
+
 	$blocks_to_wrap = [
 		'core/video',
 	];
@@ -13,9 +17,7 @@ add_filter( 'render_block', function() {
 	foreach ( $blocks_to_wrap as $block_name ) {
 		if ( $block_name === $block['blockName'] ) {
 			// Find <video> tag and wrap it with <div> tag.
-			$auto_play = strpos( $block_content, 'autoplay' );
-
-			$html = preg_replace( '/<video\b[^>]*>(.*?)<\/video>/s', '<div class="video-container">$0 ' . get_video_button_controls( $auto_play ) . '</div>', $block_content );
+			$html = preg_replace( '/<video\b[^>]*>(.*?)<\/video>/s', '<div class="video-container">$0</div>', $block_content );
 
 			$block_content = $html;
 		}
