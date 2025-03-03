@@ -8,7 +8,7 @@
  */
 add_filter(
 	'the_content',
-	function() {
+	function( $content ) {
 		return ! empty( $content ) ? $content : false;
 	},
 	20
