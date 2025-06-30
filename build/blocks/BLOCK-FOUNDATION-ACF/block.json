@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "jaws/blockname",
+  "title": "Block Grid",
+  "category": "jaws-sections",
+  "icon": "grid-view",
+  "description": "A block used to feature cards in a block grid.",
+  "keywords": [
+    "block",
+    "card",
+    "grid"
+  ],
+  "supports": {
+    "align": [
+      "full"
+    ],
+    "alignWide": false,
+    "anchor": true,
+    "color": false,
+    "customClassName": true,
+    "mode": false,
+    "jsx": true
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "anchor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "_is_preview": "true"
+      }
+    }
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "markup.php"
+  },
+  "editorStyle": "file:./editor.css",
+  "editorScript": "file:./editor.js",
+  "style": "file:./style-script.css",
+  "script": "file:./script.js",
+  "version": "1751305680531-480904"
+}

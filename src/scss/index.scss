@@ -1,14 +1,18 @@
 // Theme Styles.
 
-@import 'global/index';
-@import 'base/index';
-@import 'blocks/index';
-@import 'blocks/core/index';
+@use 'global/index' as global;
+@use 'base/index' as base;
+@use 'blocks/index' as blocks;
+@use 'blocks/core/index' as core-blocks;
 
-/* component scss from components directory */
-@import '../../components/**/[!_]*.scss'; /* stylelint-disable-line */
-@import 'components/index';
-@import 'template-tags/index';
-@import 'templates/index';
-@import 'wordpress-global/index';
+// Auto generated file.
+
+@use 'components/components-auto' as *;
+
+// Components / functions.
+
+@use 'components/index' as components;
+@use 'template-tags/index' as template-tags;
+@use 'templates/index' as templates;
+@use 'wordpress-global/index' as wordpress-global;
 

@@ -1,10 +1,10 @@
 // Global site styles
 
-@import 'fonts-mixins';
-@import 'fonts';
-@import "media-queries";
-@import 'variables';
-@import 'colors';
-@import 'grid';
-@import 'animations';
-@import 'mixins';
+@use 'fonts-mixins';
+@use 'fonts';
+@use 'media-queries';
+@use 'variables';
+@use 'colors';
+@use 'grid';
+@use 'animations';
+@use 'mixins';

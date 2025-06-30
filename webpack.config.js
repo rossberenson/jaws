@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const globImporter = require('node-sass-glob-importer-plus');
+const ScssGlobPlugin = require('./webpack-plugins/scss-glob-plugin');
 const BlockJsonVersionPlugin = require('./config/utils/block-versioning');
 
 // Remove @wordpress/scrips default sass rule. We want globbing so it's easier to remove and to create our own rule vs modifying the default.
@@ -63,9 +63,8 @@ const config = {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
-							sassOptions: {
-								importer: globImporter(),
-							},
+							api: 'modern',
+							implementation: require('sass-embedded'),
 						},
 					},
 				],
@@ -88,6 +87,8 @@ const config = {
 	stats: 'minimal',
 	plugins: [
 		...defaultConfig.plugins,
+
+		new ScssGlobPlugin(),
 
 		new MiniCssExtractPlugin(),
 
