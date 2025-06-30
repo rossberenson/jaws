@@ -8,7 +8,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const ScssGlobPlugin = require('./webpack-plugins/scss-glob-plugin');
 const BlockJsonVersionPlugin = require('./config/utils/block-versioning');
 
-// Remove @wordpress/scrips default sass rule. We want globbing so it's easier to remove and to create our own rule vs modifying the default.
+// Remove @wordpress/scrips default sass rule. We want globbing and other features, so it's easier to remove and to create our own rule vs modifying the default.
 defaultConfig.module.rules = defaultConfig.module.rules.map((obj) => {
 	// Remove the
 	if (obj.test && obj.test.toString() !== '/\\.(sc|sa)ss$/') {

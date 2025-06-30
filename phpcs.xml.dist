@@ -30,7 +30,12 @@
 	</rule>
 
 	<!-- Use WordPress "Docs" Coding Standards. -->
-	<rule ref="WordPress-Docs" />
+	<rule ref="WordPress-Docs">
+		<!-- Disable package tag requirements in file comments -->
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+		<exclude name="Squiz.Commenting.FileComment.PackageTagOrder"/>
+		<exclude name="Squiz.Commenting.FileComment.IncorrectPackageTag"/>
+	</rule>
 
 	<!-- The minimum supported WordPress version. This should match what's listed in style.css. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
@@ -50,7 +55,9 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="philament" />
+			<property name="prefixes" type="array">
+				<element value="jaws"/>
+			</property>
 		</properties>
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound" />
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound" />
@@ -61,14 +68,11 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="jaws"/>
+			<property name="text_domain" type="array">
+				<element value="jaws"/>
+			</property>
 		</properties>
 	</rule>
-
-	<!-- Disable the requirment to have @package name in every php file -->
-	<rule ref="Generic.Commenting.FileComment.MissingPackageTag">
-        <severity>0</severity>
-    </rule>
 
 	<!-- Use WordPress PHP Compatibility. -->
 	<rule ref="PHPCompatibilityWP"/>
